@@ -15,8 +15,103 @@ chrome.extension.sendMessage({}, function(response) {
 		var title = document.title;
 		console.log(url);
 		
-		// Create the banner
-		if(url == "www.infowars.com") {
+		
+		// Credible Websites
+		var credList = new Array("www.revealnews.org",
+		"www.theatlantic.com",
+		"www.economicpolicyjournal.com",
+		"washingtonmonthly.com",
+		"www.usatoday.com",
+		"www.news.com.au",
+		"www.huffingtonpost.com",
+		"www.nytimes.com",
+		"theintercept.com",
+		"jacobinmag.com",
+		"socialistworker.org",
+		"www.powerlineblog.com",
+		"www.vox.com",
+		"www.economist.com",
+		"www.itv.comnews",
+		"www.zeit.deindex",
+		"elpais.com",
+		"thehill.com",
+		"www.theamericanconservative.com",
+		"www.independent.co.uk",
+		"71republic.com",
+		"www.truthdig.com",
+		"www.justfacts.com",
+		"reason.com",
+		"www.motherjones.com",
+		"www.justfactsdaily.com",
+		"www.timesofisrael.com",
+		"www.thebalance.com",
+		"rightweb.irc-online.org",
+		"www.nbcnews.com",
+		"www.axios.com",
+		"abcnews.go.com",
+		"www.weeklystandard.com",
+		"www.thedailybeast.com",
+		"c4ss.org",
+		"www.newsoptimist.ca",
+		"euromaidanpress.com",
+		"fair.org",
+		"www.fifthestate.org",
+		"www.mediamatters.org",
+		"people.com",
+		"www.fairobserver.com",
+		"www.pluralist.com",
+		"www.salon.com",
+		"www.theroot.com",
+		"www.snopes.com",
+		"qz.com",
+		"time.com",
+		"www.metro.us",
+		"www.usnews.com",
+		"shorensteincenter.org",
+		"www.msn.com",
+		"www.washingtonexaminer.com",
+		"www.vvdailypress.com",
+		"www.wsws.org",
+		"www.irishtimes.com",
+		"www.citizen.org",
+		"knowherenews.com",
+		"thelibertarianrepublic.com",
+		"factmyth.com",
+		"www.americanprogress.org",
+		"www.rollingstone.com",
+		"www.newser.com",
+		"www.mcall.com",
+		"www.csmonitor.com",
+		"ijr.com",
+		"www.newsobserver.com",
+		"www.stripes.com",
+		"washingtonpress.com",
+		"www.fastcompany.com",
+		"www.latimes.com",
+		"slate.com",
+		"thefederalist.com",
+		"www.law.com",
+		"iowastartingline.com",
+		"www.commdiginews.com",
+		"act.tv",
+		"www.mediaite.com");
+
+		// Check whether current website is credible
+		function isCredible(weblist){
+			var credible = false;
+			var url = window.location.hostname; // Get hostname
+			console.log(url);
+			for(var i =0;i<78;i++){
+				if(url== weblist[i]){
+					credible= true;
+					console.log(credible);
+				}
+			}
+			return credible;}
+
+
+// Create the banner
+		if(!isCredible(credList)) {
 		  console.log("It works!");
 
 		  // Banner background
@@ -24,7 +119,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  banner.id="banner";
 		  banner.style.background = "#F00";
 		  banner.style.width="100%";
-		  banner.style.height="200px";
+		  banner.style.height="100px";
 		  banner.style.position="fixed";
 		  banner.style.top="20px";
 		  document.body.appendChild(banner);
@@ -32,7 +127,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  // Banner alert text
 		  var text = document.createElement('h1');
 		  text.innerHTML = "This is a sketch article!";
-		  text.style.fontSize = "65px";
+		  text.style.fontSize = "30px";
 		  text.style.color = "white";
 		  banner.appendChild(text)
 

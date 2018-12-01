@@ -1,4 +1,5 @@
 function credibleFinder(){
-var title = console.log(document.title);
-
+var title = console.log(document.title)
 }
+
+
