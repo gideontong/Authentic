@@ -14,7 +14,7 @@ The entire process of creating the extension was documented via a YouTube livest
 
 ### Inspiration
 
-On November 7th, the Borderline shooting occurred in Thousand Oaks. Absolutely shocked to see Thousand Oaks next to the words "mass shooting" all over the internet, we tried to look for productive discussion on how to decrease mass shootings in order to find solace. However, all we found were factually incorrect argumentative comments and people labeling each other as "communist liberals" and "white elitists."
+On November 7th, the Borderline shooting occurred in Thousand Oaks. Absolutely shocked to see Thousand Oaks next to the words "mass shooting" all over the internet, we tried to look for productive discussion on how to decrease mass shootings in order to find solace. However, all we found were factually incorrect argumentative comments and people labeling each other as "communist liberals" and "white elitists." Thus, we created Authentic to help people stop basing their arguments on false information and come to an agreement on the science and academia behind each controversial issue. This will help bridge the political polarization in our country and promote product conversation amongst citizens so that we can solidify the past and present for a better tomorrow.
 
 ### Purpose
 
