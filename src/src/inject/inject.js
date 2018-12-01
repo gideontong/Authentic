@@ -94,14 +94,16 @@ chrome.extension.sendMessage({}, function(response) {
 		"iowastartingline.com",
 		"www.commdiginews.com",
 		"act.tv",
-		"www.mediaite.com");
+		"www.mediaite.com",
+		"www.google.com",
+		"assignments.gideontong.com");
 
 		// Check whether current website is credible
 		function isCredible(weblist){
 			var credible = false;
 			var url = window.location.hostname; // Get hostname
 			console.log(url);
-			for(var i =0;i<78;i++){
+			for(var i =0;i<80;i++){
 				if(url== weblist[i]){
 					credible= true;
 					console.log(credible);
@@ -152,7 +154,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  // special search engine document
 		  var highlight = document.createElement('p');
 		  var highlight_link = document.createElement('a');
-		  var x = "google.com";
+		  var x = "https://assignments.gideontong.com/search?q=" + q;
 		  highlight_link.href = x;
 		  console.log(x);
 		  highlight_link.innerHTML = "More sources";
