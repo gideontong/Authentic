@@ -189,7 +189,6 @@ chrome.extension.sendMessage({}, function(response) {
 
 		}
 
-
 	}
 	}, 10);
 });
