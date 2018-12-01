@@ -8,7 +8,7 @@ You can download the Authentic app from the Chrome Webstore soon! Stay tuned at 
 
 ### Livestream
 
-The entire process of creating the extension was documented via a YouTube livestream (at the time of writing, was quickly approach 9 hours long), which can be viewed below.
+The entire process of creating the extension was documented via a YouTube livestream (at the time of writing, was quickly approaching 14 hours long), which can be viewed below.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3hXYaGVsnZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
