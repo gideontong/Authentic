@@ -4,6 +4,7 @@ chrome.extension.sendMessage({}, function(response) {
 		clearInterval(readyStateCheckInterval);
 
 		var GOOGLE_API_KEY = "";
+		var SEARCH_ID = "";
 
 		// ----------------------------------------------------------
 		// This part of the script triggers when page is done loading
@@ -100,7 +101,7 @@ chrome.extension.sendMessage({}, function(response) {
 		function isCredible(weblist){
 			var credible = false;
 			var url = window.location.hostname; // Get hostname
-			console.log(url);
+			// console.log(url);
 			for(var i =0;i<78;i++){
 				if(url== weblist[i]){
 					credible= true;
@@ -110,7 +111,7 @@ chrome.extension.sendMessage({}, function(response) {
 			return credible;}
 
 
-// Create the banner
+		// Create the banner
 		if(!isCredible(credList)) {
 		  console.log("It works!");
 
@@ -135,27 +136,54 @@ chrome.extension.sendMessage({}, function(response) {
 		  var q = title.replace(/[\W]/gi, "+").replace(/\s+/g, "");
 		  // console.log(q);
 		  var search = "https://www.googleapis.com/customsearch/v1/siterestrict?"
-			+ "key=" + GOOGLE_API_KEY + "&q=" + q;
+			 + "q=" + q + "&key=" + GOOGLE_API_KEY + "&cx=" + SEARCH_ID;
 		  // console.log(search);
 
-		  $.ajax({
+		  // Original AJAX request 
+		  /* $.ajax({
 			  url: search,
 			  type: "GET",
 			  success: function(result) {
-				  console.log(result.items);
+				console.log(result.items[0].title);
+				console.log(result.items[0].link);
 			  },
 			  error: function(error) {
 				  console.log("Error: " + error);
 			  }
-		  })
+		  }) */
+
+		  // NEW HTTP Request style
+		  var request = new XMLHttpRequest();
+		  var response, parsable;
+		  request.open("GET", search, true);
+		  request.onreadystatechange = function() {
+			  if(request.readyState == 4 && request.status == 200) {
+				  response = request.responseText;
+				  // console.log(response);
+
+				  // Parse response from text to JSON
+				  parsable = JSON.parse(response);
+				  // console.log(parsable);
+				  console.log(parsable.items[0].title);
+				  console.log(parsable.items[0].link);
+				   
+				  var highlight = document.createElement('p');
+				  var highlight_link = document.createElement('a');
+				  highlight_link.href = parsable.items[0].link;
+				  highlight_link.innerHTML = parsable.items[0].title;
+				  banner.appendChild(highlight);
+				  highlight.appendChild(highlight_link);
+			  }
+		  }
+		  request.send();
 
 		  // special search engine document
-		  var highlight = document.createElement('p');
-		  var highlight_link = document.createElement('a');
-		  highlight_link.href = chrome.runtime.getURL("search.html");
-		  highlight_link.innerHTML = "More sources";
-		  banner.appendChild(highlight);
-		  highlight.appendChild(highlight_link);
+		  var results = document.createElement('p');
+		  var results_link = document.createElement('a');
+		  results_link.href = chrome.runtime.getURL("search.html");
+		  results_link.innerHTML = "More sources";
+		  banner.appendChild(results);
+		  results.appendChild(results_link);
 
 		}
 
