@@ -119,7 +119,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  // Banner background
 		  var banner = document.createElement('div');
 		  banner.id="banner";
-		  banner.style.background = "#F00";
+		  banner.style.background = "#B22222";
 		  banner.style.width="100%";
 		  banner.style.height="100px";
 		  banner.style.position="fixed";
