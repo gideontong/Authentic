@@ -54,11 +54,19 @@ chrome.extension.sendMessage({}, function(response) {
 			  }
 		  })
 
+		  // special search engine document
+		  var highlight = document.createElement('p');
+		  var highlight_link = document.createElement('a');
+		  highlight_link.href = chrome.runtime.getURL("search.html");
+		  highlight_link.innerHTML = "More sources";
+		  banner.appendChild(highlight);
+		  highlight.appendChild(highlight_link);
+
 		  // New document
 		  var highlight = document.createElement('p');
 		  var highlight_link = document.createElement('a');
-		  highlight_link.href = "http://www.google.com";
-		  highlight_link.innerHTML = "CLICK ME";
+		  highlight_link.href = chrome.runtime.getURL("search.html");
+		  highlight_link.innerHTML = "CLICK HERE";
 		  banner.appendChild(highlight);
 		  highlight.appendChild(highlight_link);
 		}
