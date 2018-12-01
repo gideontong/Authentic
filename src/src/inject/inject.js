@@ -123,19 +123,33 @@ chrome.extension.sendMessage({}, function(response) {
 		  // Banner background
 		  var banner = document.createElement('div');
 		  banner.id="banner";
-		  banner.style.background = "#B22222";
+		  banner.style.background = "#FF5151";
+		  banner.style.textTransform = "uppercase";
 		  banner.style.width="100%";
-		  banner.style.height="100px";
+		  banner.style.height="180px";
 		  banner.style.position="fixed";
-		  banner.style.top="20px";
+		  banner.style.top="0px";
+		  banner.style.left = "0px";
 		  document.body.appendChild(banner);
 
 		  // Banner alert text
 		  var text = document.createElement('h1');
-		  text.innerHTML = "This is a sketch article!";
+		  text.innerHTML = "Authentic: This source may be unfactual.";
 		  text.style.fontSize = "30px";
 		  text.style.color = "white";
+		  text.style.textTransform = "uppercase";
+		  text.style.textAlign = "center";
+		  text.style.fontFamily = "Trebuchet MS";
 		  banner.appendChild(text)
+		  
+		  // Buttons div
+		  var buttons = document.createElement('div');
+		  buttons.style.cssFloat = "center";
+		  buttons.style.alignContent = "center";
+		  buttons.style.alignItems = "center";
+		  buttons.style.alignSelf = "center";
+		  buttons.style.textAlign = "center";
+		  banner.appendChild(buttons);
 
 		  // Pull the relevant article
 		  var q = title.replace(/[\W]/gi, "+").replace(/\s+/g, "");
@@ -172,23 +186,50 @@ chrome.extension.sendMessage({}, function(response) {
 				  console.log(parsable.items[0].title);
 				  console.log(parsable.items[0].link);
 				   
-				  var highlight = document.createElement('p');
-				  var highlight_link = document.createElement('a');
-				  highlight_link.href = parsable.items[0].link;
-				  highlight_link.innerHTML = parsable.items[0].title;
-				  banner.appendChild(highlight);
-				  highlight.appendChild(highlight_link);
+				  var highlight = document.createElement('button');
+				  highlight.href = parsable.items[0].link;
+				  highlight.innerHTML = parsable.items[0].title;
+				  highlight.style.backgroundColor = "white";
+				  highlight.style.borderRadius = "13px";
+				  highlight.style.border = "1px solid #ffffff";
+				  highlight.style.display = "inline-block";
+				  highlight.style.cursor = "pointer";
+				  highlight.style.color = "#FF5151";
+				  highlight.style.fontFamily = "Trebuhet MS";
+				  highlight.style.fontSize = "18px";
+				  highlight.style.fontWeight = "bold";
+				  highlight.style.textTransform = "uppercase";
+				  highlight.style.padding = "17px 76px";
+				  highlight.style.textDecoration = "none";
+				  highlight.style.margin = "8px";
+				  highlight.style.textAlign = "center";
+				  buttons.appendChild(highlight);
 			  }
 		  }
 		  request.send();
 
 		  // special search engine document
-		  var results = document.createElement('p');
-		  var results_link = document.createElement('a');
-		  results_link.href = "https://assignments.gideontong.com/search?q=" + q;
-		  results_link.innerHTML = "More sources";
-		  banner.appendChild(results);
-		  results.appendChild(results_link);
+		  var results = document.createElement('button');
+		  results.onclick = function() {
+			  chrome.tabs.create({ url: "https://assignments.gideontong.com/search?q=" + q })
+		  }
+		  // results.href = "https://assignments.gideontong.com/search?q=" + q;
+		  results.innerHTML = "More Results";
+		  results.style.backgroundColor = "white";
+		  results.style.borderRadius = "13px";
+		  results.style.border = "1px solid #ffffff";
+		  results.style.display = "inline-block";
+		  results.style.cursor = "pointer";
+		  results.style.color = "#FF5151";
+		  results.style.fontFamily = "Trebuchet MS";
+		  results.style.fontSize = "18px";
+		  results.style.fontWeight = "bold";
+		  results.style.textTransform = "uppercase";
+		  results.style.padding = "17px 76px";
+		  results.style.textDecoration = "none";
+		  results.style.margin = "8px";
+		  results.style.textAlign = "center";
+		  buttons.appendChild(results);
 
 		}
 
