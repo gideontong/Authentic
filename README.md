@@ -1,2 +1,2 @@
-# HackBytheSea2018
-Jane's, Gideon's, and Annie's hackathon project for 2018's Hackathon by the Sea
+# Authentic
+**Authentic** is a Chrome extension that allows people to understand when they might be reading an untrustworthy news source. When a news article they are reading has a possibility of being questionable.
