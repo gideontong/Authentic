@@ -95,14 +95,16 @@ chrome.extension.sendMessage({}, function(response) {
 		"iowastartingline.com",
 		"www.commdiginews.com",
 		"act.tv",
-		"www.mediaite.com");
+		"www.mediaite.com",
+		"www.google.com",
+		"assignments.gideontong.com");
 
 		// Check whether current website is credible
 		function isCredible(weblist){
 			var credible = false;
 			var url = window.location.hostname; // Get hostname
-			// console.log(url);
-			for(var i =0;i<78;i++){
+			console.log(url);
+			for(var i =0;i<80;i++){
 				if(url== weblist[i]){
 					credible= true;
 					console.log(credible);
@@ -118,7 +120,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  // Banner background
 		  var banner = document.createElement('div');
 		  banner.id="banner";
-		  banner.style.background = "#F00";
+		  banner.style.background = "#B22222";
 		  banner.style.width="100%";
 		  banner.style.height="100px";
 		  banner.style.position="fixed";
