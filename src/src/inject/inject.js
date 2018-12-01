@@ -62,13 +62,6 @@ chrome.extension.sendMessage({}, function(response) {
 		  banner.appendChild(highlight);
 		  highlight.appendChild(highlight_link);
 
-		  // New document
-		  var highlight = document.createElement('p');
-		  var highlight_link = document.createElement('a');
-		  highlight_link.href = chrome.runtime.getURL("search.html");
-		  highlight_link.innerHTML = "CLICK HERE";
-		  banner.appendChild(highlight);
-		  highlight.appendChild(highlight_link);
 		}
 
 
