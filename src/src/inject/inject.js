@@ -100,14 +100,15 @@ chrome.extension.sendMessage({}, function(response) {
 		"assignments.gideontong.com",
 		"keep.google.com",
 		"www.github.com",
-		"authentic.gq");
+		"authentic.gq",
+		"www.washingtonpost.com");
 
 		// Check whether current website is credible
 		function isCredible(weblist){
 			var credible = false;
 			var url = window.location.hostname; // Get hostname
 			console.log(url);
-			for(var i =0;i<80;i++){
+			for(var i =0;i<81;i++){
 				if(url == weblist[i]){
 					credible = true;
 					console.log(credible);
@@ -186,7 +187,7 @@ chrome.extension.sendMessage({}, function(response) {
 				  console.log(parsable.items[0].title);
 				  console.log(parsable.items[0].link);
 				   
-				  var highlight = document.createElement('button');
+				  var highlight = document.createElement('a');
 				  highlight.href = parsable.items[0].link;
 				  highlight.innerHTML = parsable.items[0].title;
 				  highlight.style.backgroundColor = "white";
@@ -209,11 +210,11 @@ chrome.extension.sendMessage({}, function(response) {
 		  request.send();
 
 		  // special search engine document
-		  var results = document.createElement('button');
-		  results.onclick = function() {
-			  chrome.tabs.create({ url: "https://assignments.gideontong.com/search?q=" + q })
-		  }
-		  // results.href = "https://assignments.gideontong.com/search?q=" + q;
+		  var results = document.createElement('a');
+		  /*results.addEventListener("click", function() {
+			chrome.tabs.create({ })
+		  });*/
+		  results.href = "https://assignments.gideontong.com/search?q=" + q;
 		  results.innerHTML = "More Results";
 		  results.style.backgroundColor = "white";
 		  results.style.borderRadius = "13px";
