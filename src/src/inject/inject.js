@@ -43,7 +43,7 @@ chrome.extension.sendMessage({}, function(response) {
 			+ "key=" + GOOGLE_API_KEY + "&q=" + q;
 		  // console.log(search);
 
-		  $.ajax({
+		  /*$.ajax({
 			  url: search,
 			  type: "GET",
 			  success: function(result) {
@@ -52,12 +52,14 @@ chrome.extension.sendMessage({}, function(response) {
 			  error: function(error) {
 				  console.log("Error: " + error);
 			  }
-		  })
+		  })*/
 
 		  // special search engine document
 		  var highlight = document.createElement('p');
 		  var highlight_link = document.createElement('a');
-		  highlight_link.href = chrome.runtime.getURL("search.html");
+		  var x = "google.com";
+		  highlight_link.href = x;
+		  console.log(x);
 		  highlight_link.innerHTML = "More sources";
 		  banner.appendChild(highlight);
 		  highlight.appendChild(highlight_link);
