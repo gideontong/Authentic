@@ -1,9 +1,13 @@
 #header {
-
+    background: #B22222;
+    width: 100%;
+    height: 100px;
+    position: fixed;
 }
 
 #title {
-
+    fontSize: 30px;
+    color: white;
 }
 
 #story {
@@ -11,5 +15,5 @@
 }
 
 #results {
-    
+
 }
