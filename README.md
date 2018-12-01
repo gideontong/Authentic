@@ -23,3 +23,7 @@ The extension serves to detect the domain that the user is currently browsing an
 ### Our Takeaways
 
 Building this web extension was a very challenge experience for us because we were not familiar with JavaScript. However, we were able to learn the syntax and accomplish our project with research, (little sleep!) and patience. Trough the process we also discovered many news changes we always thought were credible but were actually deemed as mixed factual quality by MediaBiasFactCheck.org which further proves how significant our web extension is for everyone.
+
+### What's Next for Authentic
+
+Due to financial constraints, our custom Google search engine is limited to 10 website sources (the free tier). In our current version, we have a database of about 100 credible sources. For the future, we would like to expand our database. One way to do this is to implement a user feedback feature to allow users to send us updates of news sites. Currently, we generalize publishers as “credible” or “incredible”, but we would like to specifically identify articles and facts that are incorrect. Another feature we would like to introduce is suggestion of opposite bias sources. For instance, if you are reading about immigration on Fox News (right biased) we offer you an article on the same topic from a left bias source such as US News. Adding source preferences is also a feature we would like to implement in the future to personalize the experience for each individual.
