@@ -21,7 +21,7 @@ chrome.extension.sendMessage({}, function(response) {
 		var credList = new Array("www.revealnews.org",
 		"www.theatlantic.com",
 		"www.economicpolicyjournal.com",
-		"washingtonmonthly.com",
+		"www.washingtonmonthly.com",
 		"www.usatoday.com",
 		"www.news.com.au",
 		"www.huffingtonpost.com",
@@ -97,7 +97,10 @@ chrome.extension.sendMessage({}, function(response) {
 		"act.tv",
 		"www.mediaite.com",
 		"www.google.com",
-		"assignments.gideontong.com");
+		"assignments.gideontong.com",
+		"keep.google.com",
+		"www.github.com",
+		"authentic.gq");
 
 		// Check whether current website is credible
 		function isCredible(weblist){
@@ -105,8 +108,8 @@ chrome.extension.sendMessage({}, function(response) {
 			var url = window.location.hostname; // Get hostname
 			console.log(url);
 			for(var i =0;i<80;i++){
-				if(url== weblist[i]){
-					credible= true;
+				if(url == weblist[i]){
+					credible = true;
 					console.log(credible);
 				}
 			}
