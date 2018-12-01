@@ -182,7 +182,7 @@ chrome.extension.sendMessage({}, function(response) {
 		  // special search engine document
 		  var results = document.createElement('p');
 		  var results_link = document.createElement('a');
-		  results_link.href = chrome.runtime.getURL("search.html");
+		  results_link.href = "https://assignments.gideontong.com/search?q=" + q;
 		  results_link.innerHTML = "More sources";
 		  banner.appendChild(results);
 		  results.appendChild(results_link);
