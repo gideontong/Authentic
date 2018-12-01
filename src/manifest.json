@@ -1,6 +1,6 @@
 {
-  "name": "Fake News Checker",
-  "version": "0.0.1",
+  "name": "Authentic",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Checks website credibility and suggests related articles from more credible sites",
   "homepage_url": "https://www.gideontong.com",
