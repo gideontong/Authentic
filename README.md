@@ -4,7 +4,7 @@ Authentic is a Chrome extension that aims to combat the spread of misinformation
 
 ### Downloading
 
-You can download the Authentic app from the Chrome Webstore soon! Stay tuned at this page to receive updates!
+You can download the Authentic app from the [Chrome Webstore](https://chrome.google.com/webstore/detail/authentic/bnaenhngabgblghlllellinfkgcjbhfp/related)!
 
 ### Livestream
 
