@@ -6,18 +6,13 @@ chrome.extension.sendMessage({}, function(response) {
 		var GOOGLE_API_KEY = "";
 		var SEARCH_ID = "";
 
-		// ----------------------------------------------------------
-		// This part of the script triggers when page is done loading
-		console.log("Hello. This message was sent from scripts/inject.js");
-		// ----------------------------------------------------------
-
-		// Check if someone has browsed to infowars.com
-		var url = window.location.hostname; // Get hostname
+		// Get the current domain URL to match against the list of whitelisted domains
+		var url = window.location.hostname;
 		var title = document.title;
 		console.log(url);
 		
 		
-		// Credible Websites
+		// Whitelisted domains
 		var credList = new Array("www.revealnews.org",
 		"www.theatlantic.com",
 		"www.economicpolicyjournal.com",
